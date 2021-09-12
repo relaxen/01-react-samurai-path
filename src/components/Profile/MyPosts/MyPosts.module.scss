@@ -1,0 +1,61 @@
+.container {
+  flex: 1 1 auto;
+}
+
+.NewPost {
+  margin-top: 15px;
+}
+
+.detail {
+  margin-top: 20px;
+}
+
+.post {
+  margin-top: 15px;
+  padding: 10px 10px 10px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.textarea {
+  background-color: darkgray;
+  color: #fff;
+  padding: 10px;
+  border-radius: 20px;
+  border-bottom-right-radius: 0;
+}
+
+.button {
+  margin-top: 10px;
+  width: 152px;
+  height: 43px;
+  align-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background-image: linear-gradient(90deg, #e66465, #9198e5);
+  color: #Fff;
+  font-weight: 600;
+
+  &:hover {
+    transform: scale(1.2);
+    transition: all 0.3s ease 0s;
+  }
+}
+
+
+.postMessages {
+  height: 220px;
+  padding: 10px 10px 0px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  z-index: 3;
+  margin-bottom: -20px;
+}
+
+.PostHeader {
+  font-size: 24px;
+}

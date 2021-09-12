@@ -1,0 +1,51 @@
+.dialogs {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  height: 100%;
+
+  &__dialogs-items {
+    padding: 10px;
+  }
+
+  &__message-field {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    padding: 10px;
+    height: 100%;
+  }
+
+  &__messages {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    flex: 1 0;
+    padding: 20px 20px 30px;
+  }
+
+  &__message {
+    &.right {
+      align-self: flex-end;
+    }
+
+  }
+
+  &__item {
+    padding-bottom: 10px;
+
+    & a {
+      color: darkmagenta;
+      font-weight: bold;
+
+      &.active {
+        color: goldenrod;
+      }
+    }
+  }
+}
+
+
+

@@ -1,0 +1,23 @@
+.sidePanel {
+  grid-area: n;
+  color: #fff;
+  background-color: #228b22;
+  padding: 10px;
+}
+
+.main {
+  margin-bottom: 30px;
+}
+
+.text {
+  & a {
+    text-decoration-line: none;
+    color: #fff;
+  }
+
+}
+
+a.active {
+  text-decoration-line: none;
+  color: #000;
+}

@@ -1,0 +1,33 @@
+.banner {
+  width: 100%;
+  object-fit: fill;
+  flex: 0 1 200px;
+  height: 200px;
+}
+
+.userInfo {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 10px;
+  flex: 1 0 100px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: fill;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.description {
+  margin-top: 20px;
+}
+
+
+

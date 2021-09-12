@@ -1,0 +1,29 @@
+body {
+  background-color: aqua;
+  height: 100%;
+}
+
+.app-grid {
+  height: 100%;
+
+  margin: 0 81px;
+  width: calc(100% - 162px);
+  display: grid;
+  grid-template-rows: 60px calc(100% - 200px) 120px;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
+  grid-template-areas:
+  "h h"
+  "n c"
+  "f f";
+}
+
+.content {
+  grid-area: c;
+}
+
+#root {
+  height: 100%;
+}
+
+
