@@ -1,5 +1,6 @@
-const ADD_POST = "ADD-POST"
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT"
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const SET_USER_PROFILE = 'SET-USER-PROFILE';
 
 const initialState = {
 
@@ -9,6 +10,26 @@ const initialState = {
         {id: 1, message: "It`s my first post!!!", likesCount: 5},
     ],
     newPostTemp: "",
+		profile:{
+			userId:'',
+			lookingForAJob: false,
+			lookingForAJobDescription: '',
+			fullName: '',
+			contacts: {
+				github: '',
+				vk:'',
+				facebook:'',
+				instagram:'',
+				twitter: '',
+				website: '',
+				youtube: '',
+				mainLink: '',
+			},
+			photos:{
+				small:"",
+				large:"",
+			},
+		},
 
 };
 
@@ -34,16 +55,24 @@ const profileReducer = (state = initialState, action) => {
                 ...state,
                 newPostTemp: action.payload,
             }
+				case SET_USER_PROFILE:
+					return{
+						...state,
+						profile:action.payload,
+					}
         default:
             return state;
     }
 };
 
 export const addPostActionCreator = () => ({type: ADD_POST});
-export const updatePostActionCreator = (newText) => (
-    {
+export const updatePostActionCreator = (newText) => ({
         type: UPDATE_NEW_POST_TEXT,
         payload: newText,
     });
+export const setUserProfile = (profile) =>({
+	type: SET_USER_PROFILE,
+	payload: profile,
+});
 
 export default profileReducer;
