@@ -1,0 +1,29 @@
+.selectedPage{
+	font-size: 1.5em;
+	font-weight: 700;
+}
+.pageNumber{
+	cursor: pointer;
+}
+.pagination{
+	max-width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	max-height: 100px;
+	overflow: auto;
+}
+.wrapper{
+	position:relative;
+	/*background:#333;*/
+	height:100%;
+}
+.avatar{
+	width: 100px;
+	height: 100px;
+	display: block;
+	background-color: #70c542;
+	border-radius: 50%;
+	overflow: hidden;
+	text-align: center;
+	vertical-align: middle;
+}
