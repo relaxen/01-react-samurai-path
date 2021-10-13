@@ -1,8 +1,8 @@
-const FOLLOW = "FOLLOW";
-const SET_USERS = "SET-USERS";
-const SET_CURRENT_PAGE = "SET-CURRENT-PAGE";
-const SET_TOTAL_COUNT = "SET-TOTAL-COUNT";
-const TOGGLE_IS_FETCHING = "TOGGLE-IS-FETCHING";
+const FOLLOW = 'FOLLOW';
+const SET_USERS = 'SET-USERS';
+const SET_CURRENT_PAGE = 'SET-CURRENT-PAGE';
+const SET_TOTAL_COUNT = 'SET-TOTAL-COUNT';
+const TOGGLE_IS_FETCHING = 'TOGGLE-IS-FETCHING';
 
 const initialState = {
     usersData: [],
@@ -18,7 +18,7 @@ const usersReducer = (state = initialState, action) => {
         case FOLLOW:
             return {
                 ...state,
-                usersData: state.usersData.map(user => user.id == action.payload ? {
+                usersData: state.usersData.map(user => user.id === action.payload ? {
                     ...user,
                     followed: !user.followed
                 } : {...user})
