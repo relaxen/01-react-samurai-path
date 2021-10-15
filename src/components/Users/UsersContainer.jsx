@@ -5,9 +5,8 @@ import {
 	setCurrentPage,
 	getUsers,
 	following,
-} from '../redux/users-reducer';
+} from '../../redux/users-reducer';
 import Preloader from '../common/preloader/Preloader';
-import { usersAPI } from '../../api/api';
 
 class UsersContainer extends React.Component {
 

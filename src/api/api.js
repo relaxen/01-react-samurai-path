@@ -28,5 +28,21 @@ export const usersAPI = {
 		}).then(response => response.data)
 	},
 
+	getProfile(userId) {
+		return instance({
+			method: 'get',
+			url: `profile/${userId}`,
+		}).then(response => response.data)
+	},
 
+}
+
+export const authAPI = {
+
+	getAuthProfile() {
+		return instance({
+			method: 'get',
+			url: 'auth/me',
+		}).then(response => response.data)
+	}
 }
