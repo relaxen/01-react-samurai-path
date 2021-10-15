@@ -1,3 +1,5 @@
+import { authAPI } from "../api/api";
+
 const SET_USER_DATA = 'SET-USER-DATA';
 const SET_AUTH = 'SET-AUTH';
 
@@ -35,5 +37,16 @@ export const setAuth = () => ({
 	type: SET_AUTH,
 });
 
+//Thunk Creators
+
+export const getMyAuthData = () =>{
+	return (dispatch) => {
+	authAPI.getAuthProfile().then(response=>{
+		if (response.resultCode === 0) {
+			dispatch(setAuthUserData(response.data));
+			dispatch(setAuth());
+		}
+	})
+}}; 
 
 export default authReducer;

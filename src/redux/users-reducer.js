@@ -1,4 +1,4 @@
-import { usersAPI } from "../../api/api";
+import { usersAPI } from "../api/api";
 const SET_FOLLOW = 'SET-FOLLOW';
 const SET_USERS = 'SET-USERS';
 const SET_CURRENT_PAGE = 'SET-CURRENT-PAGE';
