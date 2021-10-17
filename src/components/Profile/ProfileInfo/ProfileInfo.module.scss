@@ -28,6 +28,12 @@
 .description {
   margin-top: 20px;
 }
-
+.status{
+	display: flex;
+	flex-flow: row nowrap;
+	div{
+		flex-grow: 1;
+	}
+}
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Dialogs.scss';
-import { BrowserRouter, NavLink, Redirect } from 'react-router-dom';
+import { BrowserRouter, NavLink } from 'react-router-dom';
 import c from '../Profile/MyPosts/MyPosts.module.scss';
 
 const DialogItem = (props) => {

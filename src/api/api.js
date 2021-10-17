@@ -29,9 +29,32 @@ export const usersAPI = {
 	},
 
 	getProfile(userId) {
+		console.warn('Observe method. Please use profileAPI object');
+		return profileAPI.getProfile(userId);
+	}
+}
+
+export const profileAPI = {
+
+	getProfile(userId) {
 		return instance({
 			method: 'get',
 			url: `profile/${userId}`,
+		}).then(response => response.data)
+	},
+	getStatus(userId) {
+		return instance({
+			method: 'get',
+			url: `profile/status/${userId}`,
+		}).then(response => response.data)
+	},
+	updateStatus(status) {
+		return instance({
+			method: 'put',
+			url: `profile/status`,
+			data: {
+				status
+			}
 		}).then(response => response.data)
 	},
 
