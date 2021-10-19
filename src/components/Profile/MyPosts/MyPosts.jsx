@@ -2,14 +2,21 @@ import c from './MyPosts.module.scss';
 import React from 'react';
 import Post from "./Post/Post";
 import { Field, reduxForm } from 'redux-form'
+import { maxLength } from '../../common/validators/validators';
+import { Textarea } from '../../common/FormControl/FormControl';
+
+const maxLength200 = maxLength(200);
 
 let NewPostForm = props => {
 	const { handleSubmit } = props
 	return <form onSubmit={handleSubmit} className={c.post}>
-		<Field component={'textarea'} className={c.textarea}
+		<Field
+			component={Textarea}
+			className={c.textarea}
 			name="newPostTextarea"
-			id=""
-			placeholder='Tell about your day' />
+			placeholder='Tell about your day'
+			validate={[maxLength200]}
+		/>
 		<button
 			className={c.button}>
 			Send
@@ -17,15 +24,13 @@ let NewPostForm = props => {
 	</form>
 }
 
-NewPostFormRedux = reduxForm({
+const NewPostReduxForm = reduxForm({
 	// a unique name for the form
 	form: 'newpost'
 })(NewPostForm)
 
 
 const MyPosts = (props) => {
-
-	let newPostElement = React.createRef();
 
 	let PostsData = props.posts;
 
@@ -37,19 +42,8 @@ const MyPosts = (props) => {
 			key={post.id} />
 	);
 
-	let onPostChange = () => {
-		let text = newPostElement.current.value;
-
-		props.onChangePost(text)
-	};
-
-	let addPost = () => {
-		props.addPost();
-	};
-
 	let addPostReduxForm = (dataForm) => {
-		props.onChangePost(dataForm.newPostTextarea);
-		props.addPost();
+		props.addPost(dataForm.newPostTextarea);
 	}
 
 	return (
@@ -58,7 +52,7 @@ const MyPosts = (props) => {
 				<h2 className={c.PostHeader}>
 					My posts
 				</h2>
-				<NewPostFormRedux onSubmit={addPostReduxForm}/>
+				<NewPostReduxForm onSubmit={addPostReduxForm} />
 			</div>
 			<div className={c.postMessages}>
 				{Posts}

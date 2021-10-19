@@ -1,0 +1,17 @@
+.field{
+	span{
+		display: none;
+	}
+}
+.error{
+	textarea{
+		border: 2px solid red;
+	}
+	input{
+		border: 2px solid red;
+	}
+	span{
+		color: red;
+		display: block;
+	}
+}
